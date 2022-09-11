@@ -1,6 +1,6 @@
 import {ListItem} from "../listItem/ListItem";
 
-export const ContactList = ({contacts}) => {
+export const ContactList = ({contacts, deleteContact}) => {
   return (
     <div>
       {
@@ -9,7 +9,7 @@ export const ContactList = ({contacts}) => {
             <ul>
               {
                 contacts.map(contact => (
-                  <ListItem key={contact.id} contact={contact}/>
+                  <ListItem key={contact.id} contact={contact} deleteContact={deleteContact}/>
                 ))
               }
             </ul>

@@ -45,6 +45,14 @@ export class App extends Component {
     return contacts.filter(contact => contact.name.toLowerCase().includes(filter))
   }
 
+  deleteContact = (idToDelete) => {
+    this.setState(
+      {
+        contacts: this.state.contacts.filter(contact => contact.id !== idToDelete)
+      }
+    )
+  }
+
   render() {
     return (
       <div>
@@ -52,7 +60,7 @@ export class App extends Component {
         <ContactForm createContact={this.createContact}/>
         <h2>Contacts</h2>
         <Filter searchContact={this.searchContact}/>
-        <ContactList contacts={this.showContacts()}/>
+        <ContactList contacts={this.showContacts()} deleteContact={this.deleteContact}/>
       </div>
     )
   }

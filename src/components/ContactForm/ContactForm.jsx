@@ -1,5 +1,5 @@
 import style from './ContactForm.module.css'
-import {Component, createContext} from "react";
+import {Component} from "react";
 import PropTypes from "prop-types";
 
 export class ContactForm extends Component {
